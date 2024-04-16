@@ -293,7 +293,7 @@ class Elementor_Price_Box_Widget extends \Elementor\Widget_Base {
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'pricebox_icon_width',
 			[
 				'label' => esc_html__( 'Width', 'hb-price-box' ),
@@ -325,13 +325,14 @@ class Elementor_Price_Box_Widget extends \Elementor\Widget_Base {
 			[
 				'label' => esc_html__( 'Color', 'hb-price-box' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
+				'default' => '#2A99FF',
 				'selectors' => [
 					'{{WRAPPER}} .price-box .icon svg' => 'fill: {{VALUE}}',
 				],
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'pricebox_icon_padding',
 			[
 				'label' => esc_html__( 'Padding', 'hb-price-box' ),
@@ -361,13 +362,43 @@ class Elementor_Price_Box_Widget extends \Elementor\Widget_Base {
 			]
 		);
 
-		$this->end_controls_section();
-
-		$this->start_controls_section(
-			'subtitle',
+		$this->add_control(
+			'pricebox_title_color',
 			[
-				'label' => esc_html__( 'Subtitle', 'hb-price-box' ),
-				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+				'label' => esc_html__( 'Color', 'hb-price-box' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'default' => '#2A99FF',
+				'selectors' => [
+					'{{WRAPPER}} .price-box .title' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'pricebox_title_typography',
+				'selector' => '{{WRAPPER}} .price-box .title',
+			]
+		);
+
+		$this->add_responsive_control(
+			'pricebox_title_padding',
+			[
+				'label' => esc_html__( 'Padding', 'hb-price-box' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+				'default' => [
+					'top' => 0,
+					'right' => 0,
+					'bottom' => 8,
+					'left' => 0,
+					'unit' => 'px',
+					'isLinked' => false,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .price-box .title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
 			]
 		);
 
@@ -380,8 +411,49 @@ class Elementor_Price_Box_Widget extends \Elementor\Widget_Base {
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
+		
+		$this->add_control(
+			'pricebox_subtitle_color',
+			[
+				'label' => esc_html__( 'Color', 'hb-price-box' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'default' => '#2A99FF',
+				'selectors' => [
+					'{{WRAPPER}} .price-box .subtitle' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'pricebox_subtitle_typography',
+				'selector' => '{{WRAPPER}} .price-box .subtitle',
+			]
+		);
+
+		$this->add_responsive_control(
+			'pricebox_subtitle_padding',
+			[
+				'label' => esc_html__( 'Padding', 'hb-price-box' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+				'default' => [
+					'top' => 0,
+					'right' => 0,
+					'bottom' => 24,
+					'left' => 0,
+					'unit' => 'px',
+					'isLinked' => false,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .price-box .subtitle' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
 
 		$this->end_controls_section();
+
 
 		$this->start_controls_section(
 			'image',

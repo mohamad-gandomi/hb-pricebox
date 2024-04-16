@@ -202,10 +202,60 @@ final class Plugin {
 
 		// Add Plugin actions
 		add_action( 'elementor/widgets/register', [ $this, 'register_widgets' ] );
+		add_filter( 'elementor/fonts/groups', [ $this, 'add_custom_font_group' ]);
+		add_filter( 'elementor/fonts/additional_fonts', [ $this, 'add_fonts_to_custom_group' ] );
+		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_custom_stylesheet' ] );
 		//add_action( 'elementor/controls/register', [ $this, 'register_controls' ] );
 
 	}
 
+
+	/**
+	 * Add Custom Font Group
+	 *
+	 * Add new font group (Custom) to the top of the list.
+	 *
+	 * Fired by the `elementor/fonts/groups` filter hook.
+	 *
+	 * @param array $font_groups Array of font groups.
+	 * @return array Modified array of font groups.
+	 */
+	public function add_custom_font_group( $font_groups ) {
+		$new_font_group = array( 'hb_custom' => __( 'Persian Fonts' ) );
+		return array_merge( $new_font_group, $font_groups );
+	}
+
+
+	/**
+	 * Add Fonts to Custom Group
+	 *
+	 * Add fonts to the new font group.
+	 *
+	 * Fired by the `elementor/fonts/additional_fonts` filter hook.
+	 *
+	 * @param array $additional_fonts Array of additional fonts.
+	 * @return array Modified array of additional fonts.
+	 */
+	public function add_fonts_to_custom_group( $additional_fonts ) {
+		// Font name/font group
+		$additional_fonts['Pinar'] = 'hb_custom';
+		$additional_fonts['Yekanbakh'] = 'hb_custom';
+		return $additional_fonts;
+	}
+
+	/**
+	 * Enqueue Custom Stylesheet
+	 *
+	 * Enqueue stylesheet.
+	 *
+	 * Fired by the `wp_enqueue_scripts` action hook.
+	 */
+	function enqueue_custom_stylesheet() {
+		// Enqueue your font stylesheet
+		wp_enqueue_style( 'hb-pricebox-styles', HBPB_PDU . 'includes/assets/css/general/styles.css' );
+	}
+
+	
 	/**
 	 * Register Widgets
 	 *
