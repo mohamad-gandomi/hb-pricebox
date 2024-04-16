@@ -15,7 +15,7 @@ class Elementor_Price_Box_Widget extends \Elementor\Widget_Base {
 
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
-		wp_register_style( 'hb-pricebox', HBPB_PDU . 'includes/assets/css/widgets/pricebox.css' , array(), '1.0.0' );
+		wp_register_style( 'hb-pricebox', HBPB_PDU . 'includes/assets/css/widgets/pricebox.css' ,['elementor-frontend'], '1.0.0' );
 		//wp_register_script( 'hb-pricebox', HBPB_PDU . 'includes/assets/js/widgets/pricebox.js', ['elementor-frontend'], '1.0.0', true );
 	}
 
@@ -194,24 +194,32 @@ class Elementor_Price_Box_Widget extends \Elementor\Widget_Base {
 			]
 		);
 
+		$repeater = new \Elementor\Repeater();
+
+		$repeater->add_control(
+			'list_icon',
+			[
+				'label' => esc_html__( 'Icon', 'hb-price-box' ),
+				'type' => \Elementor\Controls_Manager::ICONS,
+			]
+		);
+
+		$repeater->add_control(
+			'list_text',
+			[
+				'label' => esc_html__( 'Title', 'hb-price-box' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+			]
+		);
+
+		/* End repeater */
 		$this->add_control(
 			'pricebox_list',
 			[
 				'label' => esc_html__( 'Price Box List', 'hb-price-box' ),
 				'type' => \Elementor\Controls_Manager::REPEATER,
+				'fields' => $repeater->get_controls(),
 				'prevent_empty' => false,
-				'fields' => [
-					[
-						'name' => 'list_icon', // Changed from pricebox_list_icon to list_icon
-						'label' => esc_html__( 'Icon', 'hb-price-box' ),
-						'type' => \Elementor\Controls_Manager::ICONS,
-					],
-					[
-						'name' => 'list_text', // Changed from pricebox_list_text to list_text
-						'label' => esc_html__( 'Title', 'hb-price-box' ),
-						'type' => \Elementor\Controls_Manager::TEXT,
-					],
-				],
 				'default' => [
 					[
 						'list_icon' => [
@@ -276,6 +284,156 @@ class Elementor_Price_Box_Widget extends \Elementor\Widget_Base {
 		);
 
 		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'icon',
+			[
+				'label' => esc_html__( 'Icon', 'hb-price-box' ),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'pricebox_icon_width',
+			[
+				'label' => esc_html__( 'Width', 'hb-price-box' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 1000,
+						'step' => 5,
+					],
+					'%' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 52,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .price-box .icon svg' => 'width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'pricebox_icon_color',
+			[
+				'label' => esc_html__( 'Color', 'hb-price-box' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .price-box .icon svg' => 'fill: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'pricebox_icon_padding',
+			[
+				'label' => esc_html__( 'Padding', 'hb-price-box' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+				'default' => [
+					'top' => 0,
+					'right' => 0,
+					'bottom' => 24,
+					'left' => 0,
+					'unit' => 'px',
+					'isLinked' => false,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .price-box .icon' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'title',
+			[
+				'label' => esc_html__( 'Title', 'hb-price-box' ),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'subtitle',
+			[
+				'label' => esc_html__( 'Subtitle', 'hb-price-box' ),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'subtitle',
+			[
+				'label' => esc_html__( 'Subtitle', 'hb-price-box' ),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'image',
+			[
+				'label' => esc_html__( 'Image', 'hb-price-box' ),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->end_controls_section();
+
+
+		$this->start_controls_section(
+			'description',
+			[
+				'label' => esc_html__( 'Description', 'hb-price-box' ),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'list',
+			[
+				'label' => esc_html__( 'List', 'hb-price-box' ),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'price',
+			[
+				'label' => esc_html__( 'Price', 'hb-price-box' ),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'button',
+			[
+				'label' => esc_html__( 'Button', 'hb-price-box' ),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->end_controls_section();
+
 
 	}
 
@@ -343,8 +501,6 @@ class Elementor_Price_Box_Widget extends \Elementor\Widget_Base {
 
 			</div>
 			<?php
-
-			
 	}
 
 	
