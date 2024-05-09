@@ -1,0 +1,116 @@
+/*=========================================================
+   PRICE BOX
+==========================================================*/
+
+/*** General ***/
+
+.price-box {
+    border: 1px solid #2A99FF;
+}
+
+/*** Title ***/
+
+.price-box .title {
+    font-family: "Pinar";
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 44.36px;
+}
+
+/*** Subtitle ***/
+
+.price-box .subtitle {
+    font-family: "Yekanbakh";
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 32px;
+}
+
+/*** Image ***/
+
+.price-box .image {
+    background-image: url('../../images/pricebox_default_image.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+/*** Description ***/
+
+.price-box .description {
+    font-family: "Yekanbakh";
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 24px;
+    background-color: #2A99FF33;
+}
+
+/*** List ***/
+
+.price-box .list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.price-box .list .list-item {
+    display: flex;
+}
+
+.price-box .list .list-item:last-child {
+    padding: 0 !important;
+}
+
+.price-box .list .list-item span {
+    font-family: "Yekanbakh";
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 24px;
+    color: #16161D;
+}
+
+/*** Price ***/
+
+.price-box .price-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.price-box .price-container .price-text {
+    font-family: "Yekanbakh";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+}
+
+.price-box .price-container .price {
+    display: flex;
+    align-items: center;
+}
+
+.price-box .price-container .price-number {
+    font-family: 'Pinar';
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 60px;
+    margin-left: 12px;
+}
+
+.price-box .price-container .currency {
+    font-family: "Yekanbakh";
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+/*** Link ***/
+
+.price-box .link {
+    font-family: "Yekanbakh";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+    text-align: center;
+    border: 1px solid #2A99FF;
+}

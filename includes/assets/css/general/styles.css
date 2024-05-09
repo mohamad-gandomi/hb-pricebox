@@ -41,25 +41,3 @@
     src: url('../../fonts/YekanBakh-Light.woff2') format('truetype');
     font-weight: 300;
 }
-
-/*=========================================================
-   PRICE BOX
-==========================================================*/
-
-/*** Title ***/
-
-.price-box .title {
-    font-family: "Pinar";
-    font-weight: 700;
-    font-size: 25px;
-    line-height: 44.36px;
-}
-
-/*** Subtitle ***/
-
-.price-box .subtitle {
-    font-family: "Yekanbakh";
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 32px;
-}
