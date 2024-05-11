@@ -7,6 +7,7 @@
  * Author:      Mohamad Gandomi
  * Author URI:  https://hadesboard.com/
  * Text Domain: hb-price-box
+ * Domain Path: /languages/
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -19,6 +20,7 @@ function hb_price_box() {
 
 	// Load plugin file
 	require_once( __DIR__ . '/includes/plugin.php' );
+	load_plugin_textdomain( 'hb-price-box', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' ); 
 
 	// Run the plugin
 	\HB_Price_Box\Plugin::instance();

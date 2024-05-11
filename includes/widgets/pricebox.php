@@ -94,7 +94,7 @@ class Elementor_Price_Box_Widget extends \Elementor\Widget_Base {
 	 * @return string Widget help URL.
 	 */
 	public function get_custom_help_url() {
-		return 'https://ariazdevs.com/';
+		return 'https://hadesboard.com/';
 	}
 
 	/**
@@ -142,12 +142,36 @@ class Elementor_Price_Box_Widget extends \Elementor\Widget_Base {
 		);
 
 		$this->add_control(
+			'active_pricebox',
+			[
+				'label' => esc_html__( 'Active', 'hb-price-box' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'On', 'hb-price-box' ),
+				'label_off' => esc_html__( 'Off', 'hb-price-box' ),
+				'return_value' => 'yes',
+				'default' => 'no',
+			]
+		);
+
+		$this->add_control(
+			'top_border',
+			[
+				'label' => esc_html__( 'Border Top', 'hb-price-box' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'On', 'hb-price-box' ),
+				'label_off' => esc_html__( 'Off', 'hb-price-box' ),
+				'return_value' => 'yes',
+				'default' => 'no',
+			]
+		);
+
+		$this->add_control(
 			'pricebox_icon',
 			[
 				'label' => esc_html__( 'Icon', 'hb-price-box' ),
 				'type' => \Elementor\Controls_Manager::ICONS,
 				'default' => [
-					'value' => 'fas fa-circle',
+					'value' => 'fas fa-server',
 					'library' => 'fa-solid',
 				],
 			]
@@ -339,10 +363,6 @@ class Elementor_Price_Box_Widget extends \Elementor\Widget_Base {
 						'max' => 100,
 					],
 				],
-				'default' => [
-					'unit' => 'px',
-					'size' => 296,
-				],
 				'selectors' => [
 					'{{WRAPPER}} .price-box' => 'width: {{SIZE}}{{UNIT}};',
 				],
@@ -406,6 +426,18 @@ class Elementor_Price_Box_Widget extends \Elementor\Widget_Base {
 			]
 		);
 
+		$this->add_control(
+			'pricebox_top_border_color',
+			[
+				'label' => esc_html__( 'Top Border Color', 'hb-price-box' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'default' => '#2A99FF',
+				'selectors' => [
+					'{{WRAPPER}} .border-top::before' => 'border-color: {{VALUE}}',
+				],
+			]
+		);
+
 		$this->end_controls_section();
 
 		$this->start_controls_section(
@@ -456,9 +488,9 @@ class Elementor_Price_Box_Widget extends \Elementor\Widget_Base {
 		);
 
 		$this->add_responsive_control(
-			'pricebox_icon_padding',
+			'pricebox_icon_margin',
 			[
-				'label' => esc_html__( 'Padding', 'hb-price-box' ),
+				'label' => esc_html__( 'Margin', 'hb-price-box' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'default' => [
@@ -470,7 +502,7 @@ class Elementor_Price_Box_Widget extends \Elementor\Widget_Base {
 					'isLinked' => false,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .price-box .icon' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .price-box .icon' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -506,9 +538,9 @@ class Elementor_Price_Box_Widget extends \Elementor\Widget_Base {
 		);
 
 		$this->add_responsive_control(
-			'pricebox_title_padding',
+			'pricebox_title_margin',
 			[
-				'label' => esc_html__( 'Padding', 'hb-price-box' ),
+				'label' => esc_html__( 'Margin', 'hb-price-box' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'default' => [
@@ -520,7 +552,7 @@ class Elementor_Price_Box_Widget extends \Elementor\Widget_Base {
 					'isLinked' => false,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .price-box .title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .price-box .title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -556,9 +588,9 @@ class Elementor_Price_Box_Widget extends \Elementor\Widget_Base {
 		);
 
 		$this->add_responsive_control(
-			'pricebox_subtitle_padding',
+			'pricebox_subtitle_margin',
 			[
-				'label' => esc_html__( 'Padding', 'hb-price-box' ),
+				'label' => esc_html__( 'Margin', 'hb-price-box' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'default' => [
@@ -570,7 +602,7 @@ class Elementor_Price_Box_Widget extends \Elementor\Widget_Base {
 					'isLinked' => false,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .price-box .subtitle' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .price-box .subtitle' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -870,9 +902,9 @@ class Elementor_Price_Box_Widget extends \Elementor\Widget_Base {
 		);
 
 		$this->add_responsive_control(
-			'pricebox_list_padding',
+			'pricebox_list_margin',
 			[
-				'label' => esc_html__( 'Padding', 'hb-price-box' ),
+				'label' => esc_html__( 'Margin', 'hb-price-box' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'default' => [
@@ -884,7 +916,7 @@ class Elementor_Price_Box_Widget extends \Elementor\Widget_Base {
 					'isLinked' => false,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .price-box .list' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .price-box .list' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1068,7 +1100,7 @@ class Elementor_Price_Box_Widget extends \Elementor\Widget_Base {
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#2A99FF',
 				'selectors' => [
-					'{{WRAPPER}} .price-box .link a' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .price-box .link' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -1111,6 +1143,115 @@ class Elementor_Price_Box_Widget extends \Elementor\Widget_Base {
 
 		$this->end_controls_section();
 
+		$this->start_controls_section(
+			'active',
+			[
+				'label' => esc_html__( 'Active', 'hb-price-box' ),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_responsive_control(
+			'pricebox_active_margin',
+			[
+				'label' => esc_html__( 'Margin', 'hb-price-box' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+				'default' => [
+					'top' => 0,
+					'right' => 0,
+					'bottom' => 40,
+					'left' => 0,
+					'unit' => 'px',
+					'isLinked' => false,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .price-box.active .icon, {{WRAPPER}} .price-box.active .subtitle, {{WRAPPER}} .price-box.active .image, {{WRAPPER}} .price-box.active .description, {{WRAPPER}} .price-box.active .list, {{WRAPPER}} .price-box.active .price-container' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'pricebox_active_background_color',
+			[
+				'label' => esc_html__( 'Active Color', 'hb-price-box' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .price-box.active' => 'background-color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'pricebox_active_color',
+			[
+				'label' => esc_html__( 'Active Color', 'hb-price-box' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'default' => '#FF8A00',
+				'selectors' => [
+					'{{WRAPPER}} .price-box.active' => 'border-color: {{VALUE}}',
+					'{{WRAPPER}} .price-box.active .icon svg' => 'fill: {{VALUE}}',
+					'{{WRAPPER}} .price-box.active .icon' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .price-box.active .title' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .price-box.active .subtitle' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .price-box.active .list-icon svg' => 'fill: {{VALUE}}',
+					'{{WRAPPER}} .price-box.active .list-icon' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .price-box.active .price-number' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .price-box.active .currency' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'pricebox_active_button_background_color',
+			[
+				'label' => esc_html__( 'Button Background', 'hb-price-box' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'default' => '#FF8A00',
+				'selectors' => [
+					'{{WRAPPER}} .price-box.active .link' => 'background-color: {{VALUE}}; border-color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'pricebox_active_button_color',
+			[
+				'label' => esc_html__( 'Button Color', 'hb-price-box' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'default' => '#ffffff',
+				'selectors' => [
+					'{{WRAPPER}} .price-box.active .link' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'pricebox_active_discription_color',
+			[
+				'label' => esc_html__( 'Description Color', 'hb-price-box' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'default' => '#16161D',
+				'selectors' => [
+					'{{WRAPPER}} .price-box.active .description' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'pricebox_active_discription_background_color',
+			[
+				'label' => esc_html__( 'Description Background', 'hb-price-box' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'default' => '#FFEBCC',
+				'selectors' => [
+					'{{WRAPPER}} .price-box.active .description' => 'background-color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+
 
 	}
 
@@ -1127,7 +1268,7 @@ class Elementor_Price_Box_Widget extends \Elementor\Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 			?>
-			<div class="price-box">
+			<div class="price-box <?php echo $settings['active_pricebox'] == 'yes' ? 'active' : '' ?> <?php echo $settings['top_border'] == 'yes' ? 'border-top' : '' ?>">
 
 				<?php if($settings['pricebox_icon']): ?>
 				<div class="icon"><?php \Elementor\Icons_Manager::render_icon( $settings['pricebox_icon'], [ 'aria-hidden' => 'true' ] ); ?></div>
@@ -1175,9 +1316,9 @@ class Elementor_Price_Box_Widget extends \Elementor\Widget_Base {
 				<?php endif; ?>
 
 				<?php if($settings['pricebox_button_text']): ?>
-				<div class="link">
-					<a href="<?php echo $settings['pricebox_button_link']; ?>"><?php echo $settings['pricebox_button_text']; ?></a>
-				</div>
+				<a href="<?php echo $settings['pricebox_button_link']; ?>" class="link">
+					<span><?php echo $settings['pricebox_button_text']; ?></span>
+				</a>
 				<?php endif; ?>
 
 			</div>

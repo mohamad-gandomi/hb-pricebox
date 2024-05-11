@@ -1,0 +1,296 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: HadesBoard Price Box\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-11 09:38+0000\n"
+"PO-Revision-Date: 2024-05-11 09:49+0000\n"
+"Last-Translator: \n"
+"Language-Team: فارسی\n"
+"Language: fa_IR\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.9; wp-6.5.3\n"
+"X-Domain: hb-price-box"
+
+#. 1: Plugin name 2: Elementor
+#: includes/plugin.php:134
+#, php-format
+msgid "\"%1$s\" requires \"%2$s\" to be installed and activated."
+msgstr "\"%1$s\" نیاز دارد \"%2$s\" نصب و فعال شده باشد."
+
+#. 1: Plugin name 2: Elementor 3: Required Elementor version
+#. 1: Plugin name 2: PHP 3: Required PHP version
+#: includes/plugin.php:157 includes/plugin.php:181
+#, php-format
+msgid "\"%1$s\" requires \"%2$s\" version %3$s or greater."
+msgstr "\"%1$s\" نیازمند\"%2$s\" ورژن %3$s یا بالاتر است."
+
+#: includes/widgets/pricebox.php:308
+msgid "$"
+msgstr ""
+"هزار\n"
+"تومان"
+
+#: includes/widgets/pricebox.php:273
+msgid "24 hour support"
+msgstr "پشتیبانی ۲۴ ساعته"
+
+#: includes/widgets/pricebox.php:317
+msgid "65"
+msgstr "۶۵"
+
+#: includes/widgets/pricebox.php:147 includes/widgets/pricebox.php:1149
+msgid "Active"
+msgstr "فعال"
+
+#: includes/widgets/pricebox.php:1177 includes/widgets/pricebox.php:1188
+msgid "Active Color"
+msgstr "رنگ فعال"
+
+#: includes/widgets/pricebox.php:266
+msgid "Best price available"
+msgstr "بهترین‌ قیمت‌های موجود"
+
+#: includes/widgets/pricebox.php:403 includes/widgets/pricebox.php:676
+#: includes/widgets/pricebox.php:796 includes/widgets/pricebox.php:1127
+msgid "Border Radius"
+msgstr "بردر ردیوس"
+
+#: includes/widgets/pricebox.php:159
+msgid "Border Top"
+msgstr "بردر بالا"
+
+#: includes/widgets/pricebox.php:324 includes/widgets/pricebox.php:1051
+msgid "Button"
+msgstr "دکمه"
+
+#: includes/widgets/pricebox.php:1208
+msgid "Button Background"
+msgstr "پس زمینه دکمه"
+
+#: includes/widgets/pricebox.php:1220
+msgid "Button Color"
+msgstr "رنگ دکمه"
+
+#: includes/widgets/pricebox.php:334
+msgid "Button Link"
+msgstr "لینک دکمه"
+
+#: includes/widgets/pricebox.php:185 includes/widgets/pricebox.php:326
+msgid "Buy Host"
+msgstr "خرید هاست"
+
+#: includes/widgets/pricebox.php:481 includes/widgets/pricebox.php:523
+#: includes/widgets/pricebox.php:573 includes/widgets/pricebox.php:727
+msgid "Color"
+msgstr "رنگ"
+
+#: includes/widgets/pricebox.php:139
+msgid "Content"
+msgstr "محتوا"
+
+#: includes/widgets/pricebox.php:229
+msgid ""
+"Contrary to popular belief, Lorem Ipsum is not simply random text. It has "
+"roots in a piece of classical Latin literature from 45 BC, making it over "
+"2000 years old."
+msgstr ""
+"بهترین انتخاب، گران‌ترین انتخاب نیست؛ هاست مخصوص وردپرس لیمو را در چندلایه‌ی "
+"مختلف و با راهکارهای اختصاصی برای بالاترین سطح سرعت و امنیت بهینه‌سازی "
+"کرده‌ایم"
+
+#: includes/widgets/pricebox.php:306
+msgid "Currency"
+msgstr "واحد پول"
+
+#: includes/widgets/pricebox.php:1009
+msgid "Currency Color"
+msgstr "رنگ واحد پول"
+
+#. Description of the plugin
+msgid ""
+"Custom Elementor addon for personalized price boxes with limitless "
+"customization options."
+msgstr ""
+"این پلاگین یک ویدجت اختصاصی به نام لیست قیمت با قابلیت سفارشی سازی بالا به "
+"المنتور اضافه می‌کند"
+
+#: includes/widgets/pricebox.php:280
+msgid "Dedicated servers"
+msgstr "سرور اختصاصی"
+
+#: includes/widgets/pricebox.php:227 includes/widgets/pricebox.php:719
+msgid "Description"
+msgstr "توضیحات"
+
+#: includes/widgets/pricebox.php:1244
+msgid "Description Background"
+msgstr "پس زمینه توضیحات"
+
+#: includes/widgets/pricebox.php:1232
+msgid "Description Color"
+msgstr "رنگ توضیحات"
+
+#: includes/plugin.php:136 includes/plugin.php:159
+msgid "Elementor"
+msgstr "المنتور"
+
+#: includes/widgets/pricebox.php:344
+msgid "General"
+msgstr "عمومی"
+
+#. Name of the plugin
+msgid "HadesBoard Price Box"
+msgstr "لیست قیمت هادس برد"
+
+#: includes/plugin.php:135 includes/plugin.php:158 includes/plugin.php:182
+msgid "HB Price Box"
+msgstr "لیست قیمت هادس برد"
+
+#: includes/widgets/pricebox.php:650
+msgid "Height"
+msgstr "ارتفاع"
+
+#: includes/widgets/pricebox.php:206
+msgid "Hide"
+msgstr "مخفی کردن"
+
+#: includes/widgets/pricebox.php:287
+msgid "High speed and optimized"
+msgstr "سرعت بالا و بهینه شده"
+
+#. URI of the plugin
+#. Author URI of the plugin
+msgid "https://hadesboard.com/"
+msgstr "https://hadesboard.com/"
+
+#: includes/widgets/pricebox.php:171 includes/widgets/pricebox.php:239
+#: includes/widgets/pricebox.php:446
+msgid "Icon"
+msgstr "آیکون"
+
+#: includes/widgets/pricebox.php:927
+msgid "Icon Color"
+msgstr "رنگ آیکون"
+
+#: includes/widgets/pricebox.php:853
+msgid "Icon Distance"
+msgstr "فاصله آیکون"
+
+#: includes/widgets/pricebox.php:826
+msgid "Icon Width"
+msgstr "اندازه آیکون"
+
+#: includes/widgets/pricebox.php:616
+msgid "Image"
+msgstr "تصویر"
+
+#: includes/widgets/pricebox.php:880
+msgid "Items Distance"
+msgstr "فاصله بین آیتم‌ها"
+
+#: includes/widgets/pricebox.php:818
+msgid "List"
+msgstr "لیست"
+
+#: includes/widgets/pricebox.php:493 includes/widgets/pricebox.php:543
+#: includes/widgets/pricebox.php:593 includes/widgets/pricebox.php:696
+#: includes/widgets/pricebox.php:767 includes/widgets/pricebox.php:907
+#: includes/widgets/pricebox.php:1029 includes/widgets/pricebox.php:1059
+#: includes/widgets/pricebox.php:1079 includes/widgets/pricebox.php:1157
+msgid "Margin"
+msgstr "فاصله خارجی"
+
+#. Author of the plugin
+msgid "Mohamad Gandomi"
+msgstr "محمد گندمی"
+
+#: includes/widgets/pricebox.php:150 includes/widgets/pricebox.php:162
+msgid "Off"
+msgstr "خاموش"
+
+#: includes/widgets/pricebox.php:149 includes/widgets/pricebox.php:161
+msgid "On"
+msgstr "روشن"
+
+#: includes/widgets/pricebox.php:375 includes/widgets/pricebox.php:747
+msgid "Padding"
+msgstr "فاصله داخلی"
+
+#: includes/plugin.php:183
+msgid "PHP"
+msgstr "پی اچ پی"
+
+#: includes/widgets/pricebox.php:315 includes/widgets/pricebox.php:961
+msgid "Price"
+msgstr "قیمت"
+
+#: includes/widgets/pricebox.php:71
+msgid "Price Box"
+msgstr "لیست قیمت"
+
+#: includes/widgets/pricebox.php:256
+msgid "Price Box List"
+msgstr "لیست"
+
+#: includes/widgets/pricebox.php:989
+msgid "Price Color"
+msgstr "رنگ قیمت"
+
+#: includes/widgets/pricebox.php:299
+msgid "Price starts from"
+msgstr "شروع قیمت از"
+
+#: includes/widgets/pricebox.php:297
+msgid "Price Text"
+msgstr "متن قیمت"
+
+#: includes/widgets/pricebox.php:969
+msgid "Price Text Color"
+msgstr "رنگ متن قیمت"
+
+#: includes/widgets/pricebox.php:205
+msgid "Show"
+msgstr "نمایش دادن"
+
+#: includes/widgets/pricebox.php:203
+msgid "Show Image"
+msgstr "نمایش تصویر"
+
+#: includes/widgets/pricebox.php:193 includes/widgets/pricebox.php:565
+msgid "Subtitle"
+msgstr "زیرعنوان"
+
+#: includes/widgets/pricebox.php:939 includes/widgets/pricebox.php:1099
+msgid "Text Color"
+msgstr "رنگ متن"
+
+#: includes/widgets/pricebox.php:183 includes/widgets/pricebox.php:247
+#: includes/widgets/pricebox.php:515
+msgid "Title"
+msgstr "عنوان"
+
+#: includes/widgets/pricebox.php:432
+msgid "Top Border Color"
+msgstr "رنگ بردر بالا"
+
+#: includes/widgets/pricebox.php:230
+msgid "Type your description here"
+msgstr "توضیحات خود را تایپ کنید"
+
+#: includes/widgets/pricebox.php:186 includes/widgets/pricebox.php:196
+#: includes/widgets/pricebox.php:327
+msgid "Type your title here"
+msgstr "عنوان را تایپ کنید"
+
+#: includes/widgets/pricebox.php:195
+msgid "Types of shared web hosting"
+msgstr "انواع خدمات اشتراکی میزبانی وب"
+
+#: includes/widgets/pricebox.php:352 includes/widgets/pricebox.php:454
+#: includes/widgets/pricebox.php:624
+msgid "Width"
+msgstr "عرض"

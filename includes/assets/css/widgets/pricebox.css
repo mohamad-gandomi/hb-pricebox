@@ -8,6 +8,19 @@
     border: 1px solid #2A99FF;
 }
 
+.price-box > * {
+    transition: all 0.4s ease;
+}
+
+.price-box.border-top::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: 5%;
+    width: 90%;
+    border-top: 2px solid #2A99FF;
+}
+
 /*** Title ***/
 
 .price-box .title {
@@ -102,6 +115,7 @@
     font-weight: 600;
     font-size: 12px;
     line-height: 18px;
+    white-space: pre-line;
 }
 
 /*** Link ***/
@@ -113,4 +127,5 @@
     line-height: 32px;
     text-align: center;
     border: 1px solid #2A99FF;
+    display: block;
 }
